@@ -40,29 +40,51 @@ function PostsNew() {
   );
 }
 
-function PostsIndex() {
+function PostsIndex(props) {
+  console.log(props);
   return (
     <div id="posts-index">
       <h1>All posts</h1>
-      <div className="post">
-        <h2>Coding Today!</h2>
-        <p>Started learning react</p>
-        <img src="https://www.bairesdev.com/wp-content/uploads/2022/06/Picture6-1.svg"></img>
-      </div>
-      <div className="post">
-        <h2>It is Hot Outside</h2>
-        <p>The temp is 100 degrees</p>
-        <img src="https://www.daytondailynews.com/resizer/bbWLB1p7NlcfG9qUvPLId8Xcjh8=/814x458/cloudfront-us-east-1.images.arcpublishing.com/coxohio/NW7C3XNSONEWZHANRP5YUS7IYQ.jpg"></img>
-      </div>
+      {props.posts.map((post) => (
+        <div key={post.id} className="posts">
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+          <img src={post.image}></img>
+        </div>
+      ))}
     </div>
   );
 }
 
 function Content() {
+  let posts = [
+    {
+      id: 1,
+      title: "Coding Today!",
+      body: "Started learning react",
+      image:
+        "https://www.bairesdev.com/wp-content/uploads/2022/06/Picture6-1.svg",
+    },
+    {
+      id: 2,
+      title: "It is Hot Outside",
+      body: "The temp is 100 degrees",
+      image:
+        "https://www.daytondailynews.com/resizer/bbWLB1p7NlcfG9qUvPLId8Xcjh8=/814x458/cloudfront-us-east-1.images.arcpublishing.com/coxohio/NW7C3XNSONEWZHANRP5YUS7IYQ.jpg",
+    },
+    {
+      id: 3,
+      title: "Going on a Hike",
+      body: "Hiking in the mountains",
+      image:
+        "https://www.adorama.com/alc/wp-content/uploads/2018/08/san-juans-feature-825x465.jpg",
+    },
+  ];
+
   return (
     <div>
       <PostsNew />
-      <PostsIndex />
+      <PostsIndex posts={posts} />
     </div>
   );
 }
