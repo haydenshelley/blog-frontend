@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function Header() {
   return (
     <header>
@@ -40,29 +42,35 @@ function PostsNew() {
   );
 }
 
-function PostsIndex() {
+function PostsIndex(props) {
+  console.log(props.posts);
   return (
     <div id="posts-index">
-      <h1>All posts</h1>
-      <div className="post">
-        <h2>Coding Today!</h2>
-        <p>Started learning react</p>
-        <img src="https://www.bairesdev.com/wp-content/uploads/2022/06/Picture6-1.svg"></img>
-      </div>
-      <div className="post">
-        <h2>It is Hot Outside</h2>
-        <p>The temp is 100 degrees</p>
-        <img src="https://www.daytondailynews.com/resizer/bbWLB1p7NlcfG9qUvPLId8Xcjh8=/814x458/cloudfront-us-east-1.images.arcpublishing.com/coxohio/NW7C3XNSONEWZHANRP5YUS7IYQ.jpg"></img>
-      </div>
+      <h1>All Posts</h1>
+      {props.posts.map((post) => (
+        <div key={post.id} className="posts">
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+          <img src={post.image} alt="" />
+        </div>
+      ))}
     </div>
   );
 }
 
 function Content() {
+  const [posts, setPosts] = useState([]);
+
+  const handleIndexPosts = () => {
+    console.log("hellllllo");
+  };
+
   return (
     <div>
       <PostsNew />
-      <PostsIndex />
+      <br />
+      <button onClick={handleIndexPosts}>Show Posts</button>
+      <PostsIndex posts={posts} />
     </div>
   );
 }
