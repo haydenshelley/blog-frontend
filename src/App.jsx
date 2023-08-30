@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 function Header() {
   return (
@@ -62,15 +63,20 @@ function Content() {
   const [posts, setPosts] = useState([]);
 
   const handleIndexPosts = () => {
-    console.log("hellllllo");
+    console.log("helloooooo");
+
+    axios.get("http://localhost:3000/posts.json").then((response) => {
+      // handle success
+      console.log(response.data);
+      setPosts(response.data);
+    });
   };
 
   return (
     <div>
       <PostsNew />
-      <br />
-      <button onClick={handleIndexPosts}>Show Posts</button>
       <PostsIndex posts={posts} />
+      <button onClick={handleIndexPosts}>Show Posts</button>
     </div>
   );
 }
