@@ -6,6 +6,7 @@ import { Modal } from "./Modal";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
+  const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
 
   const handleIndexPosts = () => {
     console.log("helloooooo");
@@ -19,12 +20,19 @@ export function Content() {
 
   useEffect(handleIndexPosts, []);
 
+  const handleShowPost = () => {
+    setIsPostsShowVisible(true);
+  };
+
+  const handleClose = () => {
+    setIsPostsShowVisible(false);
+  };
+
   return (
     <div>
       <PostsNew />
-      <PostsIndex posts={posts} />
-      {/* <button onClick={handleIndexPosts}>Show Posts</button> */}
-      <Modal show={true}>
+      <PostsIndex posts={posts} onShowPost={handleShowPost} />
+      <Modal show={isPostsShowVisible} onClose={handleClose}>
         <p>Posts Show</p>
       </Modal>
     </div>
