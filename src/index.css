@@ -1,7 +1,3 @@
-#posts-index img {
-  width: 300px;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -26,4 +22,9 @@ html {
 body {
   background: rgb(179,179,179);
   background: radial-gradient(circle, rgba(179,179,179,1) 74%, rgba(92,92,92,1) 100%);
+}
+
+.card {
+  margin-left: auto;
+  margin-right: auto;
 }
