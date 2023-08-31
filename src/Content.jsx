@@ -9,8 +9,6 @@ export function Content() {
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
 
   const handleIndexPosts = () => {
-    console.log("helloooooo");
-
     axios.get("http://localhost:3000/posts.json").then((response) => {
       // handle success
       console.log(response.data);
