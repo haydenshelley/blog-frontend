@@ -5,3 +5,25 @@
 html {
   scroll-behavior: smooth;
 }
+
+#root {
+  font-family: "Hoefler Text";
+}
+
+#posts-index {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#posts-new {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+body {
+  background: rgb(179,179,179);
+  background: radial-gradient(circle, rgba(179,179,179,1) 74%, rgba(92,92,92,1) 100%);
+}

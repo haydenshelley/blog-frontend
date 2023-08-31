@@ -16,9 +16,12 @@ export function PostsNew() {
           <input />
         </p>
         <p>
-          <button type="submit">Submit</button>
+          <button type="submit" className="btn btn-secondary">
+            Submit
+          </button>
         </p>
       </form>
+      <hr />
     </div>
   );
 }
