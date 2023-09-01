@@ -37,8 +37,14 @@ export function Content() {
     });
   };
 
+  const handleDestroyPost = (id) => {
+    axios.delete(`http://localhost:3000/posts/${id}.json`).then((response) => {
+      handleClose();
+      setPosts(posts.filter((post) => id !== post.id));
+    });
+  };
+
   const handleUpdatePost = (id, params) => {
-    console.log("hanlding update post");
     axios
       .patch(`http://localhost:3000/posts/${id}.json`, params)
       .then((response) => {
@@ -63,7 +69,11 @@ export function Content() {
       <LogoutLink />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} />
+        <PostsShow
+          post={currentPost}
+          onUpdatePost={handleUpdatePost}
+          onDestroyPost={handleDestroyPost}
+        />
       </Modal>
       <PostsNew onCreatePost={handleCreatePost} />
     </div>

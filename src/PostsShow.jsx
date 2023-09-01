@@ -5,10 +5,15 @@ export function PostsShow(props) {
     props.onUpdatePost(props.post.id, params);
   };
 
+  const handleClick = () => {
+    props.onDestroyPost(props.post.id);
+  };
+
   return (
     <div>
       <h2> {props.post.title} </h2>
       <p> {props.post.body} </p>
+      <button onClick={handleClick}>Delete</button>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">

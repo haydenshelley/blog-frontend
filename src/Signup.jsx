@@ -31,15 +31,15 @@ export function Signup() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <lable className="form-label">Name: </lable>
+          <lable className="form-label">Name</lable>
           <input className="form-control" name="name" type="text" />
         </div>
         <div className="mb-3">
-          <lable className="form-label">Email: </lable>
+          <lable className="form-label">Email</lable>
           <input className="form-control" name="email" type="email" />
         </div>
         <div className="mb-3">
-          <lable className="form-label">Password: </lable>
+          <lable className="form-label">Password</lable>
           <input className="form-control" name="password" type="password" />
         </div>
         <div className="mb-3">
