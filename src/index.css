@@ -52,3 +52,13 @@ body {
   flex-direction: column;
   text-align: center;
 }
+
+.form-control {
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#body-input {
+  height: 100px;
+}
