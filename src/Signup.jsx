@@ -30,20 +30,29 @@ export function Signup() {
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
-        <div>
-          Name: <input name="name" type="text" />
+        <div className="mb-3">
+          <lable className="form-label">Name: </lable>
+          <input className="form-control" name="name" type="text" />
         </div>
-        <div>
-          Email: <input name="email" type="email" />
+        <div className="mb-3">
+          <lable className="form-label">Email: </lable>
+          <input className="form-control" name="email" type="email" />
         </div>
-        <div>
-          Password: <input name="password" type="password" />
+        <div className="mb-3">
+          <lable className="form-label">Password: </lable>
+          <input className="form-control" name="password" type="password" />
         </div>
-        <div>
-          Password confirmation:{" "}
-          <input name="password_confirmation" type="password" />
+        <div className="mb-3">
+          <lable className="form-label">Password Confirmation: </lable>
+          <input
+            className="form-control"
+            name="password_confirmation"
+            type="password"
+          />
         </div>
-        <button type="submit">Signup</button>
+        <button type="submit" className="btn btn-secondary">
+          Signup
+        </button>
       </form>
     </div>
   );
