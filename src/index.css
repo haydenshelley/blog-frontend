@@ -32,3 +32,23 @@ body {
 #posts-index {
   padding-top: 10px;
 }
+
+#signup {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#login {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#logoutLink {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
