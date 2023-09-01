@@ -28,3 +28,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+#posts-index {
+  padding-top: 10px;
+}
