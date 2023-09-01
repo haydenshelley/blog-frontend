@@ -12,7 +12,7 @@ export function PostsIndex(props) {
               <button
                 onClick={() => props.onShowPost(post)}
                 type="button"
-                classNameName="btn btn-secondary"
+                className="btn btn-secondary"
               >
                 More Info
               </button>

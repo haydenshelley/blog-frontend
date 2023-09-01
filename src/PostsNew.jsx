@@ -3,35 +3,35 @@ export function PostsNew() {
     <div id="posts-new">
       <h1>New post</h1>
       <div className="mb-3">
-        <label for="formGroupExampleInput" className="form-label">
+        <label htmlFor="title" className="form-label">
           Title
         </label>
         <input
           type="text"
           className="form-control"
-          id="formGroupExampleInput"
+          id="title-input"
           placeholder="Title..."
         />
       </div>
       <div className="mb-3">
-        <label for="formGroupExampleInput2" className="form-label">
+        <label htmlFor="body" className="form-label">
           Body
         </label>
         <input
           type="text"
           className="form-control"
-          id="formGroupExampleInput2"
+          id="body-input"
           placeholder="Body..."
         />
       </div>
       <div className="mb-3">
-        <label for="formGroupExampleInput2" className="form-label">
+        <label htmlFor="image" className="form-label">
           Image
         </label>
         <input
           type="text"
           className="form-control"
-          id="formGroupExampleInput2"
+          id="image-input"
           placeholder="Image Url..."
         />
       </div>
