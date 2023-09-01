@@ -65,8 +65,10 @@ export function Content() {
   return (
     <div className="container">
       <Signup />
+      <hr />
       <Login />
       <LogoutLink />
+      <hr />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow
@@ -75,6 +77,7 @@ export function Content() {
           onDestroyPost={handleDestroyPost}
         />
       </Modal>
+      <hr />
       <PostsNew onCreatePost={handleCreatePost} />
     </div>
   );
