@@ -37,6 +37,25 @@ export function Content() {
     });
   };
 
+  const handleUpdatePost = (id, params) => {
+    console.log("hanlding update post");
+    axios
+      .patch(`http://localhost:3000/posts/${id}.json`, params)
+      .then((response) => {
+        console.log(response.data);
+        setCurrentPost(response.data);
+        setPosts(
+          posts.map((post) => {
+            if (post.id === id) {
+              return response.data;
+            } else {
+              return post;
+            }
+          })
+        );
+      });
+  };
+
   return (
     <div className="container">
       <Signup />
@@ -44,7 +63,7 @@ export function Content() {
       <LogoutLink />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <PostsShow post={currentPost} />
+        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} />
       </Modal>
       <PostsNew onCreatePost={handleCreatePost} />
     </div>
