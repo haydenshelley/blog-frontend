@@ -10,10 +10,13 @@ export function PostsShow(props) {
   };
 
   return (
-    <div>
+    <div className="postShow">
       <h2> {props.post.title} </h2>
       <p> {props.post.body} </p>
-      <button onClick={handleClick}>Delete</button>
+      <button id="showDelete" onClick={handleClick}>
+        Delete
+      </button>
+      <hr></hr>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">

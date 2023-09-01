@@ -62,3 +62,15 @@ body {
 #body-input {
   height: 100px;
 }
+
+.postShow {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#showDelete {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+}
