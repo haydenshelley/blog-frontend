@@ -1,14 +1,13 @@
 import axios from "axios";
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  const params = new FormData(event.target);
-  axios.post("http://localhost:3000/posts.json", params).then((response) => {
-    window.location.href = "/";
-  });
-};
+export function PostsNew(props) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    props.onCreatePost(params);
+    event.target.reset();
+  };
 
-export function PostsNew() {
   return (
     <div id="posts-new">
       <h1>New post</h1>

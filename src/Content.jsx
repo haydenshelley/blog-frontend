@@ -16,7 +16,6 @@ export function Content() {
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then((response) => {
       // handle success
-      console.log(response.data);
       setPosts(response.data);
     });
   };
@@ -32,6 +31,12 @@ export function Content() {
     setIsPostsShowVisible(false);
   };
 
+  const handleCreatePost = (params) => {
+    axios.post("http://localhost:3000/posts.json", params).then((response) => {
+      setPosts([...posts, response.data]);
+    });
+  };
+
   return (
     <div className="container">
       <Signup />
@@ -41,7 +46,7 @@ export function Content() {
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} />
       </Modal>
-      <PostsNew />
+      <PostsNew onCreatePost={handleCreatePost} />
     </div>
   );
 }

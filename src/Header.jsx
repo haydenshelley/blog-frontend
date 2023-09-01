@@ -30,7 +30,7 @@ export function Header() {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#posts-index">
-                Add Post
+                All Posts
               </a>
             </li>
           </ul>
