@@ -109,3 +109,7 @@ body {
   text-decoration: inherit;
   color: rgb(65, 65, 65);
 }
+
+#separatePost {
+  text-align: center;
+}

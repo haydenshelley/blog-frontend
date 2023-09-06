@@ -8,6 +8,7 @@ import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { Routes, Route } from "react-router-dom";
 import { About } from "./About";
+import { SeparatePostsShow } from "./SeparatePostsShow";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -77,6 +78,7 @@ export function Content() {
           path="/posts"
           element={<PostsIndex posts={posts} onShowPost={handleShowPost} />}
         />
+        <Route path="/posts/:id" element={<SeparatePostsShow />} />
       </Routes>
 
       <Modal show={isPostsShowVisible} onClose={handleClose}>

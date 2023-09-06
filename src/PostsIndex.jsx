@@ -21,6 +21,7 @@ export function PostsIndex(props) {
                   >
                     More Info
                   </button>
+                  <a href={`/posts/${post.id}`}>More Info Again</a>
                 </div>
               </div>
               <br />

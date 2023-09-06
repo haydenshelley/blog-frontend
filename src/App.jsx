@@ -7,8 +7,8 @@ function App() {
   return (
     <div id="page-container">
       <BrowserRouter>
+        <Header />
         <div id="content-wrap">
-          <Header />
           <Content />
         </div>
         <Footer />
