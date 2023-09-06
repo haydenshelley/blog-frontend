@@ -74,7 +74,6 @@ export function Content() {
         />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<LogoutLink />} />
       </Routes>
 
       <PostsIndex posts={posts} onShowPost={handleShowPost} />

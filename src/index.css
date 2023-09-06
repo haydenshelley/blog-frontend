@@ -83,3 +83,13 @@ body {
   height: 200px;
   width: 200px;
 }
+
+#logoutLink {
+  text-decoration: inherit;
+  color: grey;
+}
+
+#logoutLink:hover {
+  text-decoration: inherit;
+  color: rgb(65, 65, 65);
+}
