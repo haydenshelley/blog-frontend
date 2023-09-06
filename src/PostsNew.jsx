@@ -49,7 +49,6 @@ export function PostsNew(props) {
           Submit
         </button>
       </form>
-      <hr />
     </div>
   );
 }
