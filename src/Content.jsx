@@ -6,7 +6,6 @@ import { Modal } from "./Modal";
 import { PostsShow } from "./PostsShow.jsx";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
-import { LogoutLink } from "./LogOutLink";
 import { Routes, Route } from "react-router-dom";
 import { About } from "./About";
 

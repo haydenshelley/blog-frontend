@@ -5,10 +5,12 @@ import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <div id="page-container">
       <BrowserRouter>
-        <Header />
-        <Content />
+        <div id="content-wrap">
+          <Header />
+          <Content />
+        </div>
         <Footer />
       </BrowserRouter>
     </div>

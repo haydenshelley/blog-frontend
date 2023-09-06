@@ -6,6 +6,27 @@ html {
   font-family: "Hoefler Text";
 }
 
+body {
+  background-color: rgb(179,179,179);
+  background: radial-gradient(circle, rgba(179,179,179,1) 74%, rgba(92,92,92,1) 100%);
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            
+}
+
 #posts-index {
   text-align: center;
 }
@@ -15,11 +36,6 @@ html {
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-
-body {
-  background: rgb(179,179,179);
-  background: radial-gradient(circle, rgba(179,179,179,1) 74%, rgba(92,92,92,1) 100%);
 }
 
 .card {
