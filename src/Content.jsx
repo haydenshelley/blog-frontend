@@ -7,6 +7,8 @@ import { PostsShow } from "./PostsShow.jsx";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogOutLink";
+import { Routes, Route } from "react-router-dom";
+import { About } from "./About";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -64,6 +66,10 @@ export function Content() {
 
   return (
     <div className="container">
+      <Routes>
+        <Route path="/about" element={<About />} />
+      </Routes>
+
       <Signup />
       <hr />
       <Login />

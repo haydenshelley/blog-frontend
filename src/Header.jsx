@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Header() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -32,6 +34,11 @@ export function Header() {
               <a className="nav-link" href="#posts-index">
                 All Posts
               </a>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">
+                About
+              </Link>
             </li>
           </ul>
         </div>
