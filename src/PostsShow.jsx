@@ -13,7 +13,11 @@ export function PostsShow(props) {
     <div className="postShow">
       <h2> {props.post.title} </h2>
       <p> {props.post.body} </p>
-      <button id="showDelete" onClick={handleClick}>
+      <button
+        id="showDelete"
+        className="btn btn-secondary"
+        onClick={handleClick}
+      >
         Delete
       </button>
       <hr></hr>
