@@ -2,6 +2,33 @@ import { Link } from "react-router-dom";
 import { LogoutLink } from "./LogOutLink";
 
 export function Header() {
+  let validationLinks;
+
+  if (localStorage.jwt === undefined) {
+    validationLinks = (
+      <>
+        <li className="nav-item">
+          <Link className="nav-link" to="/signup">
+            Sign Up
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/login">
+            Login
+          </Link>
+        </li>
+      </>
+    );
+  } else {
+    validationLinks = (
+      <>
+        <li className="nav-item">
+          <LogoutLink />
+        </li>
+      </>
+    );
+  }
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -31,19 +58,7 @@ export function Header() {
                 New Post
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/signup">
-                Sign Up
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
-            </li>
-            <li className="nav-item">
-              <LogoutLink />
-            </li>
+            {validationLinks}
           </ul>
         </div>
       </div>

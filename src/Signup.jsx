@@ -30,7 +30,9 @@ export function Signup() {
     validationMessage = (
       <small id="passedValidation">name is at max length</small>
     );
-  } else if (name.length < 2) {
+  } else if (name.length === 0) {
+    validationMessage = "";
+  } else if (name.length > 0 && name.length < 5) {
     validationMessage = <small id="failedValidation">name is too short</small>;
   } else {
     validationMessage = (
