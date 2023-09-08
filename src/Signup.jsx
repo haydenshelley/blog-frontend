@@ -42,9 +42,11 @@ export function Signup() {
           />
         </div>
         {name.length > 20 ? (
-          <small>name is too long</small>
+          <small id="failedValidation">name is too long</small>
         ) : (
-          <small>{20 - name.length} characters remaining</small>
+          <small id="passedValidation">
+            {20 - name.length} characters remaining
+          </small>
         )}
         <div className="mb-3">
           <lable className="form-label">Email</lable>

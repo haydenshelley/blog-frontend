@@ -113,3 +113,11 @@ body {
 #separatePost {
   text-align: center;
 }
+
+#passedValidation {
+  color: green;
+}
+
+#failedValidation {
+  color: red;
+}
