@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export function Signup() {
   const [errors, setErrors] = useState([]);
+  const [name, setName] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,8 +33,19 @@ export function Signup() {
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <lable className="form-label">Name</lable>
-          <input className="form-control" name="name" type="text" />
+          <input
+            className="form-control"
+            name="name"
+            type="text"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
         </div>
+        {name.length > 20 ? (
+          <small>name is too long</small>
+        ) : (
+          <small>{20 - name.length} characters remaining</small>
+        )}
         <div className="mb-3">
           <lable className="form-label">Email</lable>
           <input className="form-control" name="email" type="email" />
