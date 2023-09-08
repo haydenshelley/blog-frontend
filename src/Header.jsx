@@ -42,9 +42,7 @@ export function Header() {
               </Link>
             </li>
             <li className="nav-item">
-              <div className="nav-link">
-                <LogoutLink />
-              </div>
+              <LogoutLink />
             </li>
           </ul>
         </div>
