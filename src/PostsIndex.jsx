@@ -9,9 +9,15 @@ export function PostsIndex(props) {
       <h2>Search:</h2>
       <input
         type="text"
+        list="titles"
         value={searchFilter}
         onChange={(event) => setSearchFilter(event.target.value)}
       ></input>
+      <datalist id="titles">
+        {props.posts.map((post) => (
+          <option key={post.id}>{post.title}</option>
+        ))}
+      </datalist>
       <br />
       <br />
       <div className="container-fluid">
