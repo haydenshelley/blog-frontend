@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import { LogoutLink } from "./LogOutLink";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export function Header() {
+  const [user, setUser] = useState({});
+  const getUserData = () => {
+    axios.get("http://localhost:3000/users/current.json").then((response) => {
+      console.log(response.data);
+      setUser(response.data);
+    });
+  };
+
+  useEffect(getUserData, []);
+
   let validationLinks;
 
   if (localStorage.jwt === undefined) {
@@ -33,7 +45,7 @@ export function Header() {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Blog
+          Hello {user.name}
         </a>
         <button
           className="navbar-toggler"
