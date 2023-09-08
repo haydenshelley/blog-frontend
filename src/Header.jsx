@@ -15,8 +15,10 @@ export function Header() {
   useEffect(getUserData, []);
 
   let validationLinks;
+  let greeting;
 
   if (localStorage.jwt === undefined) {
+    greeting = <>Blog</>;
     validationLinks = (
       <>
         <li className="nav-item">
@@ -32,6 +34,7 @@ export function Header() {
       </>
     );
   } else {
+    greeting = <>Hello {user.name}</>;
     validationLinks = (
       <>
         <li className="nav-item">
@@ -45,7 +48,7 @@ export function Header() {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Hello {user.name}
+          {greeting}
         </a>
         <button
           className="navbar-toggler"
